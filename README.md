@@ -6,7 +6,7 @@ I followed the Code Step By Step series on this stack of technologies, and I hav
 Still a work-in-progress, as the profile page hasn't been started on.
 
 To get this running, first  do 
-* %npm install  in /backend /frontend and the root directory
+* In /backend /frontend and the root directory do %npm install
 * in /backend do %nodemon
 * in /frontend do %npm start
 * voila!
