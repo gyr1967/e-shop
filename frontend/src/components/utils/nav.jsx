@@ -27,11 +27,13 @@ export default function Nav() {
           <li>
             <Link to="/profile">Profile</Link>
           </li>
+          <div className="logout">
           <li>
             <Link onClick={logout} to="/login">
               Logout ({JSON.parse(user).name})
             </Link>
           </li>
+          </div>
         </ul>
       ) : (
         <ul className="nav-ul nav-right">

@@ -35,9 +35,12 @@ export default function Products() {
   const searchDB = async (e) => {
     if (e.target.value) {
       const response = await fetch(
-        `http://localhost:3001/search/${e.target.value}`, {
+        `http://localhost:3001/search/${e.target.value}`,
+        {
           headers: {
-            authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
+            authorization: `bearer ${JSON.parse(
+              localStorage.getItem("token")
+            )}`,
           },
         }
       );
@@ -52,7 +55,7 @@ export default function Products() {
 
   return (
     <div className="product-list">
-      <h1>Product list</h1>
+      <h1>Product List</h1>
       <input
         type="text"
         className="search-product-box"
@@ -60,15 +63,18 @@ export default function Products() {
         onChange={searchDB}
       />
 
-      <ul>
+
+      {products.length > 0 ? (
+        <>
+              <ul>
         <li>S. No.</li>
         <li>Name</li>
         <li>Price</li>
         <li>Category</li>
         <li>Actions</li>
       </ul>
-      {products.length > 0 ? (
-        products.map((product, index) => (
+
+        {products.map((product, index) => (
           <ul key={product._id}>
             <li>{index + 1}</li>
             <li>{product.name}</li>
@@ -83,9 +89,10 @@ export default function Products() {
               </Link>
             </li>
           </ul>
-        ))
+        ))}
+        </>
       ) : (
-        <h1>No products found</h1>
+        <h1>no products found</h1>
       )}
     </div>
   );

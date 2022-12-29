@@ -108,3 +108,11 @@
   margin: 30px;
   border: solid 3px darkslategrey;
 }
+
+.logout {
+  float: right;
+  margin-right: 20px;
+  cursor: pointer;
+  display: block;
+}
+

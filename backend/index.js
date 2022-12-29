@@ -38,7 +38,6 @@ function verifyPassword(savedHash, savedSalt, savedIterations, password) {
 
 function verifyToken(req, resp, next) {
   let token = req.headers.authorization;
-  console.log(token);
   if (token) {
     token = token.split(" ")[1];
     jwt.verify(token, jwtSecret, (err, valid) => {
@@ -69,7 +68,6 @@ function verifyNameEmailPassValidity(name, email, pass) {
 app.post("/signup", async (req, resp) => {
   let user = new User(req.body);
   if (verifyNameEmailPassValidity(user.name, user.email, user.password) == false) {
-    console.log("bad passworwd");
     return resp.status(400).json({ message: "Invalid name, email or password" });
   }
   const hashedPassword = hashNSalt(user.password);
@@ -91,7 +89,6 @@ app.post("/login", async (req, resp) => {
     if(!user){
       return resp.send({message: "Username or password incorrect!"});
     }
-    console.log(user + "usah");
     let dotheymatch = verifyPassword(
       user.password.hash,
       user.password.salt,
@@ -125,7 +122,7 @@ app.get("/products", verifyToken, async (req, resp) => {
   if (products.length > 0) {
     resp.send(products);
   } else {
-    resp.send("No products found");
+    resp.send({message: "No products found"});
   }
 });
 
@@ -160,6 +157,15 @@ app.get("/search/:key", verifyToken, async (req, resp) => {
     ],
   });
   resp.send(products);
+});
+
+app.put("/profile", verifyToken, async (req, resp) => {
+  // let user = await User.updateOne(
+  //   { _id: req.params.id },
+  //   { $set: req.body.email }
+  // );
+  console.log(req.body);
+  resp.send("profile updated");
 });
 
 app.listen(3001, () => {
