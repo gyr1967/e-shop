@@ -26,6 +26,7 @@ export default function Login() {
     });
     result = await result.json();
     if (result.auth) {
+      delete result.user.password;
       localStorage.setItem("user-info", JSON.stringify(result.user));
       localStorage.setItem('token', JSON.stringify(result.auth));
       navigate("/");
