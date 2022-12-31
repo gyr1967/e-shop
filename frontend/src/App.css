@@ -116,3 +116,15 @@
   display: block;
 }
 
+.profileCard {
+  width: 100%;
+  padding: 10px;
+  margin: 10px;
+  display: block;
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+  background: transparent;
+}
+
