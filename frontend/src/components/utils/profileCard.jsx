@@ -12,9 +12,11 @@ export default function ProfileCard(props){
     <Link to={"/profile/updateemail/" + user._id} className="button">
       <button className="appButton">Update Email</button>
     </Link>
-    <button className="appButton" onClick={()=> console.log("button clicked")}>
+    <Link to={"/profile/updatepassword/" + user._id} className="button">
+    <button className="appButton">
       Update password
     </button>
+    </Link>
   </div>
   )
 }

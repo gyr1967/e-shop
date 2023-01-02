@@ -7,6 +7,7 @@ import PrivateComponent from "./components/utils/PrivateComponent";
 import Products from "./components/pages/products";
 import UpdateProduct from "./components/pages/updateProduct";
 import UpdateEmail from "./components/pages/updateEmail";
+import UpdatePassword from "./components/pages/updatePassword";
 import Profile from "./components/pages/profile";
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -22,6 +23,7 @@ export default function App() {
           <Route path="/add" element={<AddProduct/>} />
           <Route path="/update/:id" element={<UpdateProduct/>} />
           <Route path="/profile/updateemail/:id" element={<UpdateEmail/>} />
+          <Route path="/profile/updatepassword/:id" element={<UpdatePassword/>} /> 
           <Route path="/logout" element={<h1>Logout page</h1>} />
           <Route path="/profile" element={<Profile/>} />
           </Route>

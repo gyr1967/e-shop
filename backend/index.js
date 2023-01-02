@@ -84,6 +84,7 @@ app.post("/signup", async (req, resp) => {
 });
 
 app.post("/login", async (req, resp) => {
+  console.log(req.body);
   if (req.body.email && req.body.password) {
     let user = await User.findOne({ email: req.body.email });
     if(!user){
@@ -173,9 +174,18 @@ app.put("/profile/updateemail/:id", verifyToken, async (req, resp) => {
     { _id: req.params.id },
     { $set: req.body }
   );
-  console.log(req.body);
   resp.send(user);
 });
+
+app.put("/profile/updatepassword/:id", verifyToken, async (req, resp) => {
+  let safePassword = hashNSalt(req.body.password);
+  let user = await User.updateOne(
+    { _id: req.params.id },
+    { $set: { password: safePassword }}
+  );
+  resp.send(user);
+});
+
 
 app.listen(3001, () => {
   console.log("Server is running on port 3001");
