@@ -19,13 +19,16 @@ export default function App() {
         <Nav />
         <Routes>
           <Route element={<PrivateComponent />}>
-          <Route path="/" element={<Products/>} />
-          <Route path="/add" element={<AddProduct/>} />
-          <Route path="/update/:id" element={<UpdateProduct/>} />
-          <Route path="/profile/updateemail/:id" element={<UpdateEmail/>} />
-          <Route path="/profile/updatepassword/:id" element={<UpdatePassword/>} /> 
-          <Route path="/logout" element={<h1>Logout page</h1>} />
-          <Route path="/profile" element={<Profile/>} />
+            <Route path="/" element={<Products />} />
+            <Route path="/add" element={<AddProduct />} />
+            <Route path="/update/:id" element={<UpdateProduct />} />
+            <Route path="/profile/updateemail/:id" element={<UpdateEmail />} />
+            <Route
+              path="/profile/updatepassword/:id"
+              element={<UpdatePassword />}
+            />
+            <Route path="/logout" element={<h1>Logout page</h1>} />
+            <Route path="/profile" element={<Profile />} />
           </Route>
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
