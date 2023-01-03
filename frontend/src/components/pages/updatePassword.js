@@ -23,10 +23,10 @@ export default function UpdateEmail() {
       }
     );
     result = await result.json();
-    console.log(result+"did it work?");
+    console.log(result + "did it work?");
     if (result) {
-        navigate("/profile");
-        }
+      navigate("/profile");
+    }
   };
 
   const handleAttempt = async () => {

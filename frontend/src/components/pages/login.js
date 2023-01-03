@@ -11,7 +11,7 @@ export default function Login() {
       navigate("/");
     }
   });
-  
+
   const handleLogin = async () => {
     const data = {
       email,
@@ -22,13 +22,13 @@ export default function Login() {
       body: JSON.stringify(data),
       headers: {
         "Content-Type": "application/json",
-      }
+      },
     });
     result = await result.json();
     if (result.auth) {
       delete result.user.password;
       localStorage.setItem("user-info", JSON.stringify(result.user));
-      localStorage.setItem('token', JSON.stringify(result.auth));
+      localStorage.setItem("token", JSON.stringify(result.auth));
       navigate("/");
     } else {
       alert(result.message);

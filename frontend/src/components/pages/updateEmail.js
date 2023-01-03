@@ -7,14 +7,17 @@ export default function UpdateEmail() {
   const navigate = useNavigate();
 
   const getEmailFromDB = async () => {
-    let result = await fetch(`http://localhost:3001/profile/updateemail/${params.id}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
-      },
-    });
+    let result = await fetch(
+      `http://localhost:3001/profile/updateemail/${params.id}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
+        },
+      }
+    );
     result = await result.json();
     setEmail(result.email);
   };
@@ -40,7 +43,7 @@ export default function UpdateEmail() {
     let user = JSON.parse(localStorage.getItem("user-info"));
     user.email = email;
     if (result) {
-        localStorage.setItem("user-info", JSON.stringify(user))
+      localStorage.setItem("user-info", JSON.stringify(user));
       navigate("/profile");
     }
   };

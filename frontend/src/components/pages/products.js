@@ -63,33 +63,32 @@ export default function Products() {
         onChange={searchDB}
       />
 
-
       {products.length > 0 ? (
         <>
-              <ul>
-        <li>S. No.</li>
-        <li>Name</li>
-        <li>Price</li>
-        <li>Category</li>
-        <li>Actions</li>
-      </ul>
-
-        {products.map((product, index) => (
-          <ul key={product._id}>
-            <li>{index + 1}</li>
-            <li>{product.name}</li>
-            <li>{product.price}</li>
-            <li>{product.category}</li>
-            <li>
-              <button onClick={() => deleteProductplease(product._id)}>
-                Delete
-              </button>
-              <Link to={"/update/" + product._id} className="button">
-                Edit
-              </Link>
-            </li>
+          <ul>
+            <li>S. No.</li>
+            <li>Name</li>
+            <li>Price</li>
+            <li>Category</li>
+            <li>Actions</li>
           </ul>
-        ))}
+
+          {products.map((product, index) => (
+            <ul key={product._id}>
+              <li>{index + 1}</li>
+              <li>{product.name}</li>
+              <li>{product.price}</li>
+              <li>{product.category}</li>
+              <li>
+                <button onClick={() => deleteProductplease(product._id)}>
+                  Delete
+                </button>
+                <Link to={"/update/" + product._id} className="button">
+                  Edit
+                </Link>
+              </li>
+            </ul>
+          ))}
         </>
       ) : (
         <h1>no products found</h1>
