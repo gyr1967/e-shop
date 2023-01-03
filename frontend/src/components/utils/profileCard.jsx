@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 export default function ProfileCard(props) {
   const user = props.user;
-  console.log(user + "user");
   return (
     <div className="product-list">
       <h1>Profile page</h1>

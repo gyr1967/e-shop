@@ -9,7 +9,6 @@ export default function UpdateEmail() {
   const user = JSON.parse(localStorage.getItem("user-info"));
 
   const updatePassword = async () => {
-    console.log("updatePassword called");
     let result = await fetch(
       `http://localhost:3001/profile/updatepassword/${params.id}`,
       {
@@ -44,7 +43,6 @@ export default function UpdateEmail() {
       },
     });
     result = await result.json();
-    console.log(result);
     if (result.auth) {
       updatePassword();
     } else {
