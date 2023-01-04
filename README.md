@@ -1,7 +1,7 @@
 # e-shop
 E-shop site using React, Express and MongoDB
 
-I followed the Code Step By Step series on this stack of technologies, and I have used my own CSS styling (unfortunately), and added some functionality like password hashing and salting, and input validation.
+I followed the Code Step By Step series on this stack of technologies, and I have used my own CSS styling (unfortunately), and added some functionality like password hashing and salting, input validation and the ability to change user email and password.
 
 Still a work-in-progress, and as Uni is starting back on the 9th of Jan, I will likely leave this project alone for some time.
 
