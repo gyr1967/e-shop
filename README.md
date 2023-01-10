@@ -12,3 +12,5 @@ To get this running, first  do
 * have a MongoDB instance running on localhost:27017 
 * MongoDB instance should have a database named 'e-comm' with two collections names 'products' and 'users'
 * voila!
+
+When signing up the name must be at least 2 chars long, the email must be of valid syntax and the password must be strong.
