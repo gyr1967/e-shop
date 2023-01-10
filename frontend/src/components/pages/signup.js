@@ -27,7 +27,6 @@ export default function Signup() {
       },
     });
     result = await result.json();
-    console.log(result.message + "result");
 
     if (result.message) {
       console.log(result.message);

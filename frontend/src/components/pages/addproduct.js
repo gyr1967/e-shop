@@ -84,7 +84,7 @@ export default function AddProduct() {
         <span className="invalid-input">Enter valid company</span>
       )}
 
-      <button onClick={addProductToDB} className="appButton" type="button">
+      <button onClick={addProductToDB} className="appButton" type="submit">
         Add Product
       </button>
     </div>

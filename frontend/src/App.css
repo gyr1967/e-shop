@@ -128,3 +128,8 @@
   background: transparent;
 }
 
+.tableButton {
+  cursor: pointer;
+  margin-left: 2px;
+  margin-right: 2px;
+}

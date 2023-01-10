@@ -2,13 +2,15 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Products() {
+  const user = JSON.parse(localStorage.getItem("user-info"));
+
   const [products, setProducts] = useState([]);
   useEffect(() => {
     getProducts();
   }, []);
 
   const getProducts = async () => {
-    const response = await fetch("http://localhost:3001/products", {
+    const response = await fetch(`http://localhost:3001/products/${user._id}`, {
       headers: {
         authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
       },
@@ -80,11 +82,11 @@ export default function Products() {
               <li>{product.price}</li>
               <li>{product.category}</li>
               <li>
-                <button onClick={() => deleteProductplease(product._id)}>
+                <button className="tableButton" onClick={() => deleteProductplease(product._id)}>
                   Delete
                 </button>
                 <Link to={"/update/" + product._id} className="button">
-                  Edit
+                  <button className="tableButton">Edit</button>
                 </Link>
               </li>
             </ul>

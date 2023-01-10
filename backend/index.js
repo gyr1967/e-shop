@@ -118,8 +118,8 @@ app.post("/addproduct", verifyToken, async (req, resp) => {
   resp.send(result);
 });
 
-app.get("/products", verifyToken, async (req, resp) => {
-  let products = await Product.find();
+app.get("/products/:id", verifyToken, async (req, resp) => {
+  let products = await Product.find({ userID: req.params.id });
   if (products.length > 0) {
     resp.send(products);
   } else {
