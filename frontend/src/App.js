@@ -23,11 +23,7 @@ export default function App() {
             <Route path="/add" element={<AddProduct />} />
             <Route path="/update/:id" element={<UpdateProduct />} />
             <Route path="/profile/updateemail/:id" element={<UpdateEmail />} />
-            <Route
-              path="/profile/updatepassword/:id"
-              element={<UpdatePassword />}
-            />
-            <Route path="/logout" element={<h1>Logout page</h1>} />
+            <Route path="/profile/updatepassword/:id" element={<UpdatePassword />}/>
             <Route path="/profile" element={<Profile />} />
           </Route>
           <Route path="/signup" element={<Signup />} />
